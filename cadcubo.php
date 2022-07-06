@@ -44,7 +44,7 @@
                 <select name="quadrado_idquadrado"  id="quadrado_idquadrado" class="form-select">
                     <?php
                         require_once ("utils.php");
-                        echo selectionQuad(0, $dados[0]['quadrado_idquadrado']);
+                        echo selectQuad(0, $dados[0]['quadrado_idquadrado']);
                     ?>
                 </select>
                 <br>

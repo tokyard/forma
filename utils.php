@@ -10,16 +10,10 @@
         return option(array('idtabuleiro', 'lado'), $lista, $idselect);
     }
     
-    function selectionQuad($id, $idselect){
+    function selectQuad($id, $idselect){
         $quad = new Quadrado("","","","");
         $lista = $quad->buscarQuad($id);
         return option(array('idquadrado', 'lado'), $lista, $idselect);
-    }
-
-    function selectionCirc($id, $idselect){
-        $cir = new Circulo("","","","");
-        $lista = $cir->buscarC($id);
-        return option(array('idcirculo', 'raio'), $lista, $idselect);
     }
 
     function option($chave, $dados, $id = 0){

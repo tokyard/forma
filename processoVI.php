@@ -18,27 +18,12 @@ $processo = isset($_POST['processo']) ? $_POST['processo'] : "";
     
         if ($idretangulo == 0){
             $ret = new Retangulo("", $_POST['altura'], $_POST['base'], $_POST['cor'], $_POST['tabuleiro_idtabuleiro']);
-            $ret->insere();
+            $ret->inserir();
             header("location:ret.php");
         }else {
             $ret = new Retangulo($_POST['idretangulo'], $_POST['altura'], $_POST['base'], $_POST['cor'], $_POST['tabuleiro_idtabuleiro']);
             $ret->editar();
         }    
      
-}
-
-
-function buscarDados($idretangulo){
-    $pdo = Conexao::getInstance();
-    $consulta = $pdo->query("SELECT * FROM retangulo WHERE idretangulo = $idretangulo");
-    $dados = array();
-    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-        $dados['idretangulo'] = $linha['idretangulo'];
-        $dados['altura'] = $linha['altura'];
-        $dados['base'] = $linha['base'];
-        $dados['cor'] = $linha['cor'];
-        $dados['tabuleiro_idtabuleiro'] = $linha['tabuleiro_idtabuleiro'];
-    }
-    return $dados;
 }
 ?>

@@ -1,9 +1,9 @@
 <?php 
     session_start();
-    //inclusão de arquivos
+
     include_once ("classes/autoload.php");
     require_once "conf/Conexao.php";
-    //variaveis
+
     $login = isset($_POST["login"]) ? $_POST["login"] : "";     
     $senha = isset($_POST["senha"]) ? $_POST["senha"] : ""; 
     $processo = isset($_GET["processo"]) ? $_GET["processo"] : ""; 

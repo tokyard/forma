@@ -27,18 +27,4 @@ $processo = isset($_POST['processo']) ? $_POST['processo'] : "";
    
 }
 
-function buscarDados($idtriangulo){
-    $pdo = Conexao::getInstance();
-    $consulta = $pdo->query("SELECT * FROM triangulo WHERE idtriangulo = $idtriangulo");
-    $dados = array();
-    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-        $dados['idtriangulo'] = $linha['idtriangulo'];
-        $dados['base'] = $linha['base'];
-        $dados['lado1'] = $linha['lado1'];
-        $dados['lado2'] = $linha['lado2'];
-        $dados['cor'] = $linha['cor'];
-        $dados['tabuleiro_idtabuleiro'] = $linha['tabuleiro_idtabuleiro'];
-    }
-    return $dados;
-}
 ?>

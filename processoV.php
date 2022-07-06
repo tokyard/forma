@@ -25,17 +25,4 @@ $processo = isset($_POST['processo']) ? $_POST['processo'] : "";
         }    
         header("location:circ.php");      
 }
-
-function buscarDados($idcirculo){
-    $pdo = Conexao::getInstance();
-    $consulta = $pdo->query("SELECT * FROM circulo WHERE idcirculo = $idcirculo");
-    $dados = array();
-    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-        $dados['idcirculo'] = $linha['idcirculo'];
-        $dados['raio'] = $linha['raio'];
-        $dados['cor'] = $linha['cor'];
-        $dados['tabuleiro_idtabuleiro'] = $linha['tabuleiro_idtabuleiro'];
-    }
-    return $dados;
-}
 ?>
