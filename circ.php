@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
-    //inclusão de arquivos
+
     include_once ("../classes/autoload.php");
     include_once "../control/acao.php";
     require_once "../../conf/Conexao.php";
     
-    //variaveis
+
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $buscar = isset($_POST["buscar"]) ? $_POST["buscar"] : 1; 
     $table = "circulo";
