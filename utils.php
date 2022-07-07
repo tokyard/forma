@@ -14,7 +14,7 @@
     function selectQuad($id, $idselect){
         $quad = new Quadrado("","","","");
         $lista = $quad->buscarQuad($id);
-        return option(array('idquadrado', 'lado'), $lista, $idselect);
+        return option(array('idquadrado', 'idquadrado'), $lista, $idselect);
     }
 
     function option($chave, $dados, $id = 0){

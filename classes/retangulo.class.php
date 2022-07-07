@@ -1,5 +1,5 @@
 <?php
-    require_once "Forma.class.php";
+    require_once "classes/autoload.php";
     class Retangulo extends Forma{
         private $altura;
         private $base;
@@ -23,7 +23,7 @@
                 $this->base = $base;
         }
 
-        //método toString
+    
         public function __toString() {
             $str = parent::__toString();
             $str .="<br> Atura: ".$this->getAltura()."<br>".

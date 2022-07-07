@@ -1,5 +1,5 @@
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     class Cubo extends Quadrado{
         private $idcubo;
         private $cor;

@@ -28,13 +28,13 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="cadtab.php">Cadastro de Tabuleiros</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="cadtri.php">Cadastro de Triângulo</a></li>
+              <li><a class="dropdown-item" href="cadtri.php">Cadastro de Triângulos</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="../cadastros/cadret.php">Cadastro de Retangulos</a></li>
+              <li><a class="dropdown-item" href="cadret.php">Cadastro de Retângulos</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="cadcir.php">Cadastro de Circulos</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="../cadastros/cadcubo.php">Cadastro de Cubos</a></li>
+              <li><a class="dropdown-item" href="cadcubo.php">Cadastro de Cubos</a></li>
             </ul>
           </li>
         </ul>

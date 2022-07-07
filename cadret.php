@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     require_once "conf/Conexao.php";
     include_once "processoVI.php";
     $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
-    $idretangulo = isset($_POST['idretangulo']) ? $_POST['idretangulo'] : "";
+    $idretangulo = isset($_POST['idretangulo']) ? $_POST['idretangulo'] : 0;
     $base = isset($_POST['base']) ? $_POST['base'] : 0;
     $altura = isset($_POST['altura']) ? $_POST['altura'] : 0;
     $cor = isset($_POST['cor']) ? $_POST['cor'] : "";
-    $tabuleiro_idtabuleiro = isset($_POST['tabuleiro_idtabuleiro']) ? $_POST['tabuleiro_idtabuleiro'] : "";
+    $tabuleiro_idtabuleiro = isset($_POST['tabuleiro_idtabuleiro']) ? $_POST['tabuleiro_idtabuleiro'] : 0;
     if ($processo == 'editar'){
         $idretangulo = isset($_GET['idretangulo']) ? $_GET['idretangulo'] : "";
         if ($idretangulo > 0){
@@ -34,24 +34,27 @@
         echo "<br>";
     ?>
     <div class="container-fluid">
-        <form method="post" processo="../control/acao.php">
-            ID: <input type="text" name="idretangulo" id="" value="<?php if($processo == "editar"){echo $dados[0]['idretangulo'];}?>">
-            Base: <input name="base" id="base" type="number" required="true" placeholder="Insira a Base" value="<?php if ($processo == "editar"){echo $dados[0]['base'];}?>"><br>         
-            Altura: <input name="altura" id="altura" type="number" required="true" placeholder="Insira a Altura" value="<?php if ($processo == "editar"){echo $dados[0]['altura'];}?>"><br>         
+        <center>
+        <form method="post" action="processoVI.php">
+            ID: <input class="form-control" readonly  style="max-width:20%" type="text" name="idretangulo" id="" value="<?php if($processo == "editar"){echo $dados[0]['idretangulo'];}?>">
             <br>
-            Cor: <input name="cor" id="cor" type="color" required="true" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
+            Base: <input class="form-control" style="max-width:20%" name="base" id="base" type="text" required="true" placeholder="Insira a Base" value="<?php if ($processo == "editar"){echo $dados[0]['base'];}?>"><br>         
+            Altura: <input class="form-control" style="max-width:20%"  name="altura" id="altura" type="text" required="true" placeholder="Insira a Altura" value="<?php if ($processo == "editar"){echo $dados[0]['altura'];}?>"><br>         
+            <br>
+            Cor: <input class="form-control" style="max-width:20%" name="cor" id="cor" type="color" required="true" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
             <br>
             Tabuleiro:
-                <select name="tabuleiro_idtabuleiro"  id="tabuleiro_idtabuleiro" class="form-select">
+                <select class="form-control" style="max-width:20%" name="tabuleiro_idtabuleiro"  id="tabuleiro_idtabuleiro" class="form-select">
                     <?php
-                        require_once ("control/utils.php");
+                        require_once ("utils.php");
                         echo select(0, $dados[0]['tabuleiro_idtabuleiro']);
                     ?>
                 </select>
                 <br>
-                    
-            <button  type="submit" class="btn btn-outline-dark" name="processo" id="processo" value="<?php if($processo == "editar"){echo "editar";} else {echo "insert";}?>">Enviar</button>
+                <br>   
+                <button class="btn btn-dark" name="processo" value="salvar" id="processo" type="submit">Salvar</button>     
         </form>  
+</center>
         <hr>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

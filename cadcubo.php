@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     require_once "conf/Conexao.php";
     include_once "processoVII.php";
     include_once "utils.php";
@@ -35,13 +35,15 @@
         echo "<br>";
     ?>
     <div class="container-fluid">
+        <center>
         <form method="post" processo="processoVII.php">
 
-            ID:   <input type="text" name="idcubo" id="" value="<?php if($processo == "editar"){echo $dados[0]['idcubo'];}?>">
-            Cor: <input name="cor" id="cor" type="color" required="true" placeholder="Digite a Cor" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
+            ID:   <input class="form-control" readonly  style="max-width:20%"  type="text" name="idcubo" id="" value="<?php if($processo == "editar"){echo $dados[0]['idcubo'];}?>">
+            <br>
+            Cor: <input class="form-control" style="max-width:20%"  name="cor" id="cor" type="color" required="true" placeholder="Digite a Cor" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
             <br>
             Quadrado:
-                <select name="quadrado_idquadrado"  id="quadrado_idquadrado" class="form-select">
+                <select class="form-control" style="max-width:20%" name="quadrado_idquadrado"  id="quadrado_idquadrado" class="form-select">
                     <?php
                         require_once ("utils.php");
                         echo selectQuad(0, $dados[0]['quadrado_idquadrado']);
@@ -49,7 +51,7 @@
                 </select>
                 <br>
             Tabela:
-                <select name="tabuleiro_idtabuleiro"  id="tabuleiro_idtabuleiro" class="form-select">
+                <select class="form-control" style="max-width:20%" name="tabuleiro_idtabuleiro"  id="tabuleiro_idtabuleiro" class="form-select">
                     <?php
                         require_once ("utils.php");
                         echo select(0, $dados[0]['tabuleiro_idtabuleiro']);
@@ -57,8 +59,9 @@
                 </select>
                 <br>
                     
-            <button  type="submit" class="btn btn-outline-dark" name="processo" id="processo" value="<?php if($processo == "editar"){echo "editar";} else {echo "insert";}?>">Enviar</button>
+                <button class="btn btn-dark" name="processo" value="salvar" id="processo" type="submit">Salvar</button>
         </form>  
+</center>
         <hr>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

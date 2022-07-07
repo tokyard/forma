@@ -14,7 +14,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Retângulo</title>
 </head>
@@ -26,8 +25,7 @@
         echo "<br>";
     ?>
         <div class="container-fluid">
-        <h2>Consulta de Retângulo</h2>
-        <table class="table table-hover">
+        <table class="table table-striped">
                 <tr><td><b>ID</b></td>
                     <td><b>Base</b></td>
                     <td><b>Altura</b></td>
@@ -40,12 +38,11 @@
 
                 <form method="post">
                     <div class="form-group col-lg-3">
-                        <h3>Procurar</h3>
-                        <input type="text" name="procurar" id="procurar" size="50" class="form-control" placeholder="Insira o que deseja consultar" value="<?php echo $procurar;?>"> <br>
-                        <button name="processo" id="processo" type="submit"  class="btn btn-outline-info">Procurar</button>
+                        <h3>Procurar Retângulo</h3>
+                        <br>
+                        <input type="text" name="procurar" id="procurar" size="50" class="form-control" placeholder="Insira a Consulta" value="<?php echo $procurar;?>"> <br>
+                        <button name="processo" id="processo" type="submit"  class="btn btn-dark">Procurar</button>
                         <br><br>
-
-                        <p> Pesquisar por:</p><br>
                         <form method="post" action="">
                         <input type="radio" name="tipo" value="1" class="form-check-input" <?php if ($tipo == "1") echo "checked" ?>> ID<br>
                         <input type="radio" name="tipo" value="2" class="form-check-input" <?php if ($tipo == "2") echo "checked" ?>> Base<br>
