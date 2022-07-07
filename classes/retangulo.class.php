@@ -4,14 +4,11 @@
         private $altura;
         private $base;
 
-        //Criação do construct
         public function __construct($id,$base, $altura, $cor, $tabuleiro_idtabuleiro){
             parent::__construct($id, $cor, $tabuleiro_idtabuleiro);
             $this->setAltura($altura);
             $this->setBase($base);
         }
-
-        //Metodos get e set
         public function getAltura() {
             return $this->altura;
         }

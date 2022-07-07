@@ -3,8 +3,7 @@
     include_once ("classes/autoload.php");
     include_once "processoVII.php";
     require_once "conf/Conexao.php";
-    
-    //variaveis
+
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 1; 
 
@@ -28,7 +27,6 @@
         echo "<br>";
     ?>
         <div class="container-fluid">
-        <h2>Consulta do Cubo</h2>
         <table class="table table-dark">
                 <tr><td><b>ID</b></td>
                     <td><b>Cor</b></td>

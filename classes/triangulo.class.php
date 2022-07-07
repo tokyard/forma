@@ -1,5 +1,5 @@
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     class Triangulo extends Forma{
         private $base;
         private $lado1;
@@ -49,28 +49,28 @@
             $str .="<br>Base: ".$this->getBase()."<br>".
                     "Lado 1: ".$this->getLado1()."<br>".
                     "Lado 2: " .$this->getLado2()."<br>".
-                    "Altura: " .$this->altura()."<br>".
-                    "Área: " .$this->area()."<br>".
+                    "Altura: " .$this->Altura()."<br>".
+                    "Área: " .$this->Area()."<br>".
                     "Tipo: ".$this->tipo();
             return $str;
         }
 
 
         public function desenha(){
-            $str = "<div style='width: 0px; 
-            height: 0px; 
+            $str = "<div style='width: 1px; 
+            height: 1px; 
             border-left: ".$this->lado1."vh solid transparent; 
             border-right: ".$this->lado2."vh solid transparent;
-            border-bottom: ".$this->base."vh solid ".parent::getcor().";'></div><br>";
+            border-bottom: ".$this->base."vh solid ".parent::getCor().";'></div><br>";
             return $str;
         }        
 
-        public function altura(){
+        public function Altura(){
             $altura = round(sqrt(($this->base+$this->lado1+$this->lado2)*(-$this->base+$this->lado1+$this->lado2))/2,2);
             return $altura;
         }
 
-        public function area() {
+        public function Area() {
             $area = round(sqrt(($this->base+$this->lado1+$this->lado2)*(-$this->base+$this->lado1+$this->lado2)*($this->base-$this->lado1+$this->lado2)*($this->base+$this->lado1-$this->lado2))/4,2);
             return $area;
         }
@@ -104,6 +104,7 @@
 
             return parent::executaComando($sql, $parametros);
         }
+
 
         public static function listar($buscar = 0, $procurar = ""){
             $sql = "SELECT * FROM triangulo";

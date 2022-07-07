@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     require_once "conf/Conexao.php";
     include_once "processo.php";
     $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
-    $idquadrado = isset($_POST['idquadrado']) ? $_POST['idquadrado'] : "";
+    $idquadrado = isset($_POST['idquadrado']) ? $_POST['idquadrado'] : 0;
     $lado = isset($_POST['lado']) ? $_POST['lado'] : 0;
     $cor = isset($_POST['cor']) ? $_POST['cor'] : "";
-    $tabuleiro_idtabuleiro = isset($_POST['tabuleiro_idtabuleiro']) ? $_POST['tabuleiro_idtabuleiro'] : "";
+    $tabuleiro_idtabuleiro = isset($_POST['tabuleiro_idtabuleiro']) ? $_POST['tabuleiro_idtabuleiro'] : 0;
     if ($processo == 'editar'){
-        $id = isset($_GET['idquadrado']) ? $_GET['idquadrado'] : "";
-        if ($id > 0){
+        $idquadrado = isset($_GET['idquadrado']) ? $_GET['idquadrado'] : "";
+        if ($idquadrado > 0){
             $quad = new Quadrado("","", "", "");
-            $dados = $quad->listar(1, $id);
+            $dados = $quad->listar(1, $idquadrado);
         }
     }
     ?>
@@ -33,27 +33,29 @@
         echo "<br>";
     ?>
     <div class="container-fluid">
-        <form method="post" processo="processo.php">
+        <form method="post" action="processo.php">
 
-            ID: <input type="text" name="idquadrado" id="" value="<?php if($processo == "editar"){echo $dados[0]['idquadrado'];}?>">
-
-            Lado: <input name="lado" id="lado" type="number" required="true" placeholder="Digite o Lado" value="<?php if ($processo == "editar"){echo $dados[0]['lado'];}?>"><br>         
+        <center>
+            ID: <input class="form-control" readonly  style="max-width:20%" type="text" name="idquadrado" id="idquadrado" value="<?php if($processo == "editar"){echo $dados[0]['idquadrado'];}?>">
             <br>
-            Cor: <input name="cor" id="cor" type="color" required="true" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
+            <br>    
+            Lado: <input class="form-control"  style="max-width:20%" name="lado" id="lado" type="text" required="true" placeholder="Digite o Lado" value="<?php if ($processo == "editar"){echo $dados[0]['lado'];}?>"><br>         
+            <br>
+            Cor: <input class="form-control"  style="max-width:20%" name="cor" id="cor" type="color" required="true" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
             <br>
             Tabuleiro:
-                <select name="tabuleiro_idtabuleiro"  id="tabuleiro_idtabuleiro" class="form-select">
+                <select name="tabuleiro_idtabuleiro"  style="max-width:20%" id="tabuleiro_idtabuleiro" class="form-select">
                     <?php
                         require_once ("utils.php");
                         echo select(0, $dados[0]['tabuleiro_idtabuleiro']);
                     ?>
                 </select>
                 <br>
-                    
-
-            <button  type="submit" class="btn btn-outline-dark" name="processo" id="processo" value="<?php if($processo == "editar"){echo "editar";} else {echo "insert";}?>">Enviar</button>
+                <br>
+                <button class="btn btn-dark" name="processo" value="salvar" id="processo" type="submit">Salvar</button>
         </form>  
-        <hr>
+</center>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

@@ -4,9 +4,10 @@
     include_once ("classes/autoload.php");
     include_once "processoII.php";
     require_once "conf/Conexao.php";
+    require_once "conf/conf.inc.php";
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
-    $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 1; 
+    $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 0; 
     ?>
 
 <html lang="pt-br">
@@ -27,8 +28,7 @@
     ?>
 
         <div class="container-fluid">
-        <h2>Consulta de Tabuleiro</h2>
-        <table class="table table-hover">
+        <table class="table table-striped">
                 <tr><td><b>ID</b></td>
                     <td><b>Lado</b></td>
                     <td><b>Editar</b></td>
@@ -38,12 +38,12 @@
 
                 <form method="post">
                     <div class="form-group col-lg-3">
-                        <h3>Procurar</h3>
-                        <input type="text" name="procurar" id="procurar" size="50" class="form-control" placeholder="Insira o que deseja consultar" value="<?php echo $procurar;?>"> <br>
-                        <button name="processo" id="processo" type="submit"  class="btn btn-outline-info">Procurar</button>
+                        <h3>Procurar Tabuleiro</h3>
+                        <br>
+                        <input type="text" name="procurar" id="procurar" size="50" class="form-control" placeholder="Insira a Consulta" value="<?php echo $procurar;?>"> <br>
+                        <button name="processo" id="processo" type="submit"  class="btn btn-dark">Procurar</button>
                         <br><br>
 
-                        <p> Pesquisar por:</p><br>
                         <form method="post" action="">
                         <input type="radio" name="tipo" value="1" class="form-check-input" <?php if ($tipo == "1") echo "checked" ?>> ID<br>
                         <input type="radio" name="tipo" value="2" class="form-check-input" <?php if ($tipo == "2") echo "checked" ?>> Lado<br>
@@ -52,8 +52,10 @@
                 </form>
 
             <?php
+
                 $lista = Tabuleiro::listar($tipo, $procurar);
                 foreach ($lista as $linha) { 
+                    
             ?>
                 <tr><td><?php echo $linha['idtabuleiro'];?></td>
                     <td><?php echo $linha['lado'];?></td>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     require_once "conf/Conexao.php";
     include_once "processoII.php";
-    //variaveis
+    
     $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
     $id = isset($_POST['idtabuleiro']) ? $_POST['idtabuleiro'] : "";
     $lado = isset($_POST['lado']) ? $_POST['lado'] : 0;
@@ -33,16 +33,19 @@
     ?>
 
     <div class="container-fluid">
-        <form method="post" processo="processoII.php">
+        <form method="post" action="processoII.php">
+            <center>
             
-            ID:  <input type="hidden" name="idtabuleiro" id="" value="<?php if($processo == "editar"){echo $dados[0]['idtabuleiro'];}?>">
-
-            Lado: <input name="lado" id="lado" type="number" required="true" placeholder="Insira o Lado" value="<?php if ($processo == "editar"){echo $dados[0]['lado'];}?>"><br>         
+            ID:  <input readonly class="form-control"  style="max-width:20%" type="text" name="idtabuleiro" id="idtabuleiro" value="<?php if($processo == "editar"){echo $dados[0]['idtabuleiro'];}?>">
+        <br>
+        <br>
+            Lado: <input class="form-control"  style="max-width:20%" name="lado" id="lado" type="text" required="true" placeholder="Insira o Lado" value="<?php if ($processo == "editar"){echo $dados[0]['lado'];}?>"><br>         
             <br>
 
-            <button  type="submit" class="btn btn-outline-dark" name="processo" id="processo" value="<?php if($processo == "editar"){echo "editar";} else {echo "insert";}?>">Enviar</button>
-        </form>  
+            <button class="btn btn-dark" name="processo" value="salvar" id="processo" type="submit">Salvar</button>     
+           </form>  
         <hr>
+</center>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

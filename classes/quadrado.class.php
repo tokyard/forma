@@ -1,5 +1,5 @@
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     class Quadrado extends Forma{
     private $lado;
 
@@ -42,12 +42,14 @@
             return $style;
         }
 
-        public function inserir(){ 
-            $sql = "INSERT INTO quadrado (lado, cor, tabuleiro_idtabuleiro) VALUES(:lado, :cor, :tabuleiro_idtabuleiro)";
-            $parametros = array(":lado"=> $this->getLado(), 
-                                ":cor"=> $this->getCor(), 
+        public function inserir(){
+            $sql = 'INSERT INTO quadrado (lado, cor, tabuleiro_idtabuleiro) 
+            VALUES(:lado, :cor, :tabuleiro_idtabuleiro)';
+            $parametros = array(":lado"=> $this->getLado(),
+                                ":cor"=> $this->getCor(),
                                 ":tabuleiro_idtabuleiro"=> $this->getIdTab());
-            return parent::executaComando($sql, $parametros);
+
+            return parent::executaComando($sql, $parametros); 
         }
 
         public function excluir(){

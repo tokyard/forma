@@ -2,12 +2,12 @@
 <?php
 
     include_once ("classes/autoload.php");
-    include_once "processo.php";
+    include_once "processoV.php";
     require_once "conf/Conexao.php";
     
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
-    $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 1; 
+    $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 0; 
     ?>
 
 <html lang="pt-br">
@@ -27,8 +27,8 @@
         echo "<br>";
     ?>
         <div class="container-fluid">
-        <h2>Procure o Circulo</h2>
-        <table class="table table-dark">
+
+        <table class="table table-striped">
                 <tr><td><b>ID</b></td>
                     <td><b>Raio</b></td>
                     <td><b>Cor</b></td>
@@ -40,12 +40,12 @@
 
                 <form method="post">
                     <div class="form-group col-lg-3">
-                        <h3>Procurar</h3>
+                        <h3>Procurar Círculo</h3>
+                        <br>
                         <input type="text" name="procurar" id="procurar" size="50" class="form-control" placeholder="Insira a consulta" value="<?php echo $procurar;?>"> <br>
-                        <button name="processo" id="processo" type="submit"  class="btn btn-outline-info">Procurar</button>
+                        <button name="processo" id="processo" type="submit"  class="btn btn-dark">Procurar</button>
                         <br><br>
 
-                        <p> Pesquisar por:</p><br>
                         <form method="post" action="">
                         <input type="radio" name="tipo" value="1" class="form-check-input" <?php if ($tipo == "1") echo "checked" ?>> ID<br>
                         <input type="radio" name="tipo" value="2" class="form-check-input" <?php if ($tipo == "2") echo "checked" ?>> Raio<br>

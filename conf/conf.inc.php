@@ -1,6 +1,6 @@
 <?php
-    // Banco de Dados
-    define('HOST', 'localhost:3306');  
+
+    define('HOST', 'localhost');  
     define('DBNAME', 'mydb');    
     define('USER', 'root');  
     define('PASSWORD', '');

@@ -1,5 +1,5 @@
 <?php
-    include_once ("class/autoload.php");
+    include_once ("classes/autoload.php");
     class Tabuleiro extends Forma{
         private $idtabuleiro;
         private $lado;
@@ -27,8 +27,8 @@
         
         public function __toString() {
             return  "Lado: ".$this->getLado()."<br>".
-                    "Area: ".$this->Area()."<br>".
-                    "Perimetro: ".$this->Perimetro()."<br>";
+                    "Área: ".$this->Area()."<br>".
+                    "Perímetro: ".$this->Perimetro()."<br>";
         }
 
         public function Area() {
@@ -46,12 +46,12 @@
      }
      
         public function buscarTab($id){
-            require_once("../../conf/Conexao.php");
+            require_once("conf/Conexao.php");
             $conexao = Conexao::getInstance();
             $query = 'SELECT * FROM tabuleiro';
             if($id > 0){
-                $query .= ' WHERE idtabuleiro = :Id';
-                $stmt->bindParam(':Id', $id);
+                $query .= ' WHERE idtabuleiro = :id';
+                $stmt->bindParam(':id', $id);
             }
                 $stmt = $conexao->prepare($query);
                 if($stmt->execute())

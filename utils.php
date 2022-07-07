@@ -3,11 +3,12 @@
     $processo = "";
     if(isset($_POST['processo'])){$processo = $_POST['processo'];}else if(isset($_GET['processo'])){$processo = $_GET['processo'];}
 
-    include_once('class/autoload.php');
+    include_once('classes/autoload.php');
+    include_once('classes/autoload.php');
     function select($id, $idselect){
         $tab = new Tabuleiro("","");
         $lista = $tab->buscarTab($id);
-        return option(array('idtabuleiro', 'lado'), $lista, $idselect);
+        return option(array('idtabuleiro', 'idtabuleiro'), $lista, $idselect);
     }
     
     function selectQuad($id, $idselect){
