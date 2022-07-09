@@ -51,20 +51,17 @@
                     "Lado 2: " .$this->getLado2()."<br>".
                     "Altura: " .$this->Altura()."<br>".
                     "Área: " .$this->Area()."<br>".
-                    "Tipo: ".$this->tipo();
+                    "Tipo: ".$this->Tipo();
             return $str;
         }
 
-
         public function desenha(){
-            $str = "<div style='width: 1px; 
-            height: 1px; 
-            border-left: ".$this->lado1."vh solid transparent; 
-            border-right: ".$this->lado2."vh solid transparent;
-            border-bottom: ".$this->base."vh solid ".parent::getCor().";'></div><br>";
+            $str = "<div class='ts' style='width: 0px; height: 0px; transition: transform 1s; transform: translateX(0) scale(0.5);
+            border-left: ".$this->lado1."vw solid transparent; border-right: "
+            .$this->lado2."vw solid transparent; border-bottom: ".$this->base."vw solid ".parent::getCor().";'></div><br>";
             return $str;
-        }        
-
+        }
+        
         public function Altura(){
             $altura = round(sqrt(($this->base+$this->lado1+$this->lado2)*(-$this->base+$this->lado1+$this->lado2))/2,2);
             return $altura;

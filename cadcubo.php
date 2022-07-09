@@ -6,15 +6,15 @@
     include_once "utils.php";
    
     $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
-    $id = isset($_POST['idcubo']) ? $_POST['idcubo'] : "";
+    $idcubo = isset($_POST['idcubo']) ? $_POST['idcubo'] : 0;
+    $lado = isset($_POST['lado']) ? $_POST['lado'] : 0;   
     $cor = isset($_POST['cor']) ? $_POST['cor'] : "";   
-    $quadrado_idquadrado = isset($_POST['quadrado_idquadrado']) ? $_POST['quadrado_idquadrado'] : "";
-    $tabuleiro_idtabuleiro = isset($_POST['tabuleiro_idtabuleiro']) ? $_POST['tabuleiro_idtabuleiro'] : "";
+    $quadrado_idquadrado = isset($_POST['quadrado_idquadrado']) ? $_POST['quadrado_idquadrado'] : 0;
     if ($processo == 'editar'){
-        $id = isset($_GET['idcubo']) ? $_GET['idcubo'] : "";
-        if ($id > 0){
-            $cubo = new Cubo("","","","","");
-            $dados = $cubo->listar(1, $id);
+        $idcubo = isset($_GET['idcubo']) ? $_GET['idcubo'] : "";
+        if ($idcubo > 0){
+            $cubo = new Cubo("","","","");
+            $dados = $cubo->listar(0, $idcubo);
         }
     }
     ?>
@@ -38,7 +38,7 @@
         <center>
         <form method="post" processo="processoVII.php">
 
-            ID:   <input class="form-control" readonly  style="max-width:20%"  type="text" name="idcubo" id="" value="<?php if($processo == "editar"){echo $dados[0]['idcubo'];}?>">
+            ID:   <input class="form-control" readonly  style="max-width:20%"  type="text" name="idcubo" id="idcubo" value="<?php if($processo == "editar"){echo $dados[0]['idcubo'];}?>">
             <br>
             Cor: <input class="form-control" style="max-width:20%"  name="cor" id="cor" type="color" required="true" placeholder="Digite a Cor" value="<?php if ($processo == "editar"){echo $dados[0]['cor'];}?>"><br>
             <br>
@@ -50,14 +50,8 @@
                     ?>
                 </select>
                 <br>
-            Tabela:
-                <select class="form-control" style="max-width:20%" name="tabuleiro_idtabuleiro"  id="tabuleiro_idtabuleiro" class="form-select">
-                    <?php
-                        require_once ("utils.php");
-                        echo select(0, $dados[0]['tabuleiro_idtabuleiro']);
-                    ?>
-                </select>
-                <br>
+
+                
                     
                 <button class="btn btn-dark" name="processo" value="salvar" id="processo" type="submit">Salvar</button>
         </form>  

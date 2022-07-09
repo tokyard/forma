@@ -6,6 +6,7 @@
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 0; 
+    
 
     ?>
 
@@ -31,7 +32,6 @@
                 <tr><td><b>ID</b></td>
                     <td><b>Cor</b></td>
                     <td><b>Quadrado</b></td>
-                    <td><b>Tabuleiro</b></td>
                     <td><b>Lado</b></td>
                     <td><b>Editar</b></td>
                     <td><b>Deletar</b></td>
@@ -63,7 +63,6 @@
                 <tr><td><?php echo $linha['idcubo'];?></td>
                     <td <?php echo "style='color: $color'"?>><?php echo $linha['cor'];?></td>
                     <td><?php echo $linha['quadrado_idquadrado'];?></td>
-                    <td><?php echo $linha['tabuleiro_idtabuleiro'];?></td>
                     <td><?php echo $linha['lado'];?></td>
                 
                     <td><a href='cadcubo.php?idcubo=<?php echo $linha['idcubo'];?>&processo=editar'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench" viewBox="0 0 16 16">
@@ -73,7 +72,7 @@
 <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
 <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
 </svg></a></td>
-                    <td><a href="mostrarVII.php?idcubo=<?php echo $linha['idcubo']; ?>&cor=<?php echo str_replace('#', '%23', $linha['cor']);?>&quadrado_idquadrado=<?php echo $linha['quadrado_idquadrado']?>&tabuleiro_idtabuleiro=<?php echo $linha['tabuleiro_idtabuleiro']?>&lado=<?php echo $linha['lado']?>">
+                    <td><a href="mostrarVII.php?idcubo=<?php echo $linha['idcubo']; ?>&cor=<?php echo str_replace('#', '%23', $linha['cor']);?>&quadrado_idquadrado=<?php echo $linha['quadrado_idquadrado']?>&lado=<?php echo $linha['lado']?>">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>

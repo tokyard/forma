@@ -22,7 +22,6 @@
         public function setBase($base) {
                 $this->base = $base;
         }
-
     
         public function __toString() {
             $str = parent::__toString();
