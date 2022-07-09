@@ -1,4 +1,5 @@
 <?php
+// classe círculo //
     include_once ("classes/autoload.php");
     class Circulo extends Forma{
         private $raio;

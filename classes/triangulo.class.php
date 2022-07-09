@@ -1,4 +1,5 @@
 <?php
+// classe triângulo //
     include_once ("classes/autoload.php");
     class Triangulo extends Forma{
         private $base;

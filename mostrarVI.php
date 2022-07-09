@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+    // consulta retângulo //
+
     include_once ("classes/autoload.php");
     $idretangulo = isset($_GET['idretangulo']) ? $_GET['idretangulo'] : 0;
     $base = isset($_GET['base']) ? $_GET['base'] : 0;

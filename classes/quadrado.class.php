@@ -1,4 +1,5 @@
 <?php
+// classe quadrado //
     include_once ("classes/autoload.php");
     class Quadrado extends Forma{
     private $lado;

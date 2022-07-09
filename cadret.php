@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+// cadastro retângulo //
+
     include_once ("classes/autoload.php");
     require_once "conf/Conexao.php";
     include_once "processoVI.php";

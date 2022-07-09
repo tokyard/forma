@@ -1,4 +1,5 @@
 <?php
+// classe databased //
     class Database{
         
         public static function iniciaConexao(){

@@ -3,3 +3,4 @@
         include 'classes/' .$class. '.class.php';
     });
 ?>
+<!-- autoload das classes -->

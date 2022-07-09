@@ -3,6 +3,9 @@ require_once("classes/autoload.php");
 include_once "conf/Conexao.php";
 require_once "conf/conf.inc.php";
 
+    // controle quadrado    //
+
+
 $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
     if ($processo == "excluir"){
         $idquadrado = isset($_GET['idquadrado']) ? $_GET['idquadrado'] : 0;

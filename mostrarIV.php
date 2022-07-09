@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+
+    // consulta  triângulo //
+
     require_once "classes/autoload.php";
     $idtriangulo = isset($_GET['idtriangulo']) ? $_GET['idtriangulo'] : 0;
     $base = isset($_GET['base']) ? $_GET['base'] : 0;

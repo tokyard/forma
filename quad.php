@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+
+    // index quadrado    //
+
     include_once ("classes/autoload.php");
     include_once "processo.php";
     require_once "conf/Conexao.php";

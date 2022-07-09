@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+
+    // consulta cubo //
+
     require_once "classes/autoload.php";
     $idcubo = isset($_GET['idcubo']) ? $_GET['idcubo'] : 0;
     $lado = isset($_GET['lado']) ? $_GET['lado'] : 0;

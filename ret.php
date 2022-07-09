@@ -4,6 +4,9 @@
     include_once ("classes/autoload.php");
     include_once "processoVI.php";
     require_once "conf/Conexao.php";
+
+        // index retângulo    //
+
     
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 1; 

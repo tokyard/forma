@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+    // consulta tabuleiro  //
+
     include_once ("classes/autoload.php");
     $idtabuleiro = isset($_GET['idtabuleiro']) ? $_GET['idtabuleiro'] : 0;
     $lado = isset($_GET['lado']) ? $_GET['lado'] : 0;

@@ -1,4 +1,5 @@
 <?php
+// classe retângulo //
     require_once "classes/autoload.php";
     class Retangulo extends Forma{
         private $altura;

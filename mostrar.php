@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+    // consulta quadrado  //
+
     include_once ("classes/autoload.php");
     $idquadrado = isset($_GET['idquadrado']) ? $_GET['idquadrado'] : 0;
     $cor = isset($_GET['cor']) ? $_GET['cor'] : "";

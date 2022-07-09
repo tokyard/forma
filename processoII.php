@@ -3,6 +3,9 @@ require_once("classes/autoload.php");
 include_once "conf/Conexao.php";
 require_once "conf/conf.inc.php";
 
+    // controle tabuleiro   //
+
+
 $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
     if ($processo == "excluir"){
         $idtabuleiro = isset($_GET['idtabuleiro']) ? $_GET['idtabuleiro'] : 0;

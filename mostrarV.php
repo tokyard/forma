@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+
+    // consulta círculo   //
+
     include_once ("classes/autoload.php");
     $idcirculo = isset($_GET['idcirculo']) ? $_GET['idcirculo'] : 0;
     $raio = isset($_GET['raio']) ? $_GET['raio'] : 0;

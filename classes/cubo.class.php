@@ -1,4 +1,5 @@
 <?php
+// classe cubo //
     include_once 'conf/Conexao.php';
     require_once 'conf/conf.inc.php';
     require_once "classes/autoload.php";

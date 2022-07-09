@@ -1,4 +1,5 @@
 <?php
+// classe tabuleiro //
     include_once ("classes/autoload.php");
     class Tabuleiro extends Forma{
         private $idtabuleiro;

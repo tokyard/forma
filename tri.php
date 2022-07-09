@@ -5,6 +5,7 @@
     include_once "processoIV.php";
     require_once "conf/Conexao.php";
     
+    // index triângulo    //
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 0; 

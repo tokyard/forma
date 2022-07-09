@@ -1,4 +1,7 @@
 <?php
+
+// utils com as funções de selecionar tabuleiro e quadrado
+// enquanto chave estrangeira
     require_once "conf/Conexao.php";
     $processo = "";
     if(isset($_POST['processo'])){$processo = $_POST['processo'];}else if(isset($_GET['processo'])){$processo = $_GET['processo'];}

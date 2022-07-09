@@ -3,6 +3,8 @@ require_once("classes/autoload.php");
 include_once "conf/Conexao.php";
 require_once "conf/conf.inc.php";
 
+    // controle retângulo    //
+
 $processo = isset($_GET['processo']) ? $_GET['processo'] : "";
     if ($processo == "excluir"){
         $idretangulo = isset($_GET['idretangulo']) ? $_GET['idretangulo'] : 0;

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
     
+        // index tabuleiro    //
+
     include_once ("classes/autoload.php");
     include_once "processoII.php";
     require_once "conf/Conexao.php";

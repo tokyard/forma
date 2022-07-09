@@ -5,6 +5,8 @@
     include_once "processoV.php";
     require_once "conf/Conexao.php";
     
+    // index círculo  //
+
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : 0; 

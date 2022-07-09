@@ -1,4 +1,5 @@
 <?php
+// classe pai-forma //
 include_once ("classes/autoload.php"); 
 
     abstract class Forma extends Database{
